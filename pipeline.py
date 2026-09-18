@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sample AI content pipeline — demonstration only.
+Sample AI content pipeline (demonstration only).
 
 Reads topics from topics.json and drafts, for each topic:
   - a blog post outline + opening paragraphs (blog.md)
@@ -41,14 +41,14 @@ def dry_run_draft(topic):
             "2. What changes when it's handled\n"
             "3. Three practical next steps\n\n"
             "## Opening (draft)\n\n"
-            "[dry-run placeholder — set OPENAI_API_KEY for a real draft]\n"
+            "[dry-run placeholder: set OPENAI_API_KEY for a real draft]\n"
         ),
         "product.md": (
             f"## {t}\n\nBuilt for {audience}.\n\n"
-            "[dry-run placeholder — set OPENAI_API_KEY for a real draft]\n"
+            "[dry-run placeholder: set OPENAI_API_KEY for a real draft]\n"
         ),
         "social.md": (
-            "[dry-run placeholder — set OPENAI_API_KEY for real posts]\n\n"
+            "[dry-run placeholder: set OPENAI_API_KEY for real posts]\n\n"
             f"1. A quick thought for {audience}...\n"
             "2. ...\n"
             "3. ...\n"
@@ -69,7 +69,7 @@ def openai_draft(topic, client):
                     "role": "system",
                     "content": (
                         f"You write marketing content in a {tone} tone for {audience}. "
-                        "Plain, human language — no hype, no cliches, no emojis."
+                        "Plain, human language. No hype, no cliches, no emojis."
                     ),
                 },
                 {"role": "user", "content": prompt},
